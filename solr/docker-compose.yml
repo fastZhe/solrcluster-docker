@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   zoo1:
-    image: myzookeeper:3.5
+    image: hzdan/myzookeeper:3.5
     restart: always
     hostname: zoo1
     volumes:
@@ -15,7 +15,7 @@ services:
       ZOO_SERVERS: server.1=0.0.0.0:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
 
   zoo2:
-    image: myzookeeper:3.5
+    image: hzdan/myzookeeper:3.5
     restart: always
     hostname: zoo2
     volumes:
@@ -28,7 +28,7 @@ services:
       ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=0.0.0.0:2888:3888 server.3=zoo3:2888:3888
 
   zoo3:
-    image: myzookeeper:3.5
+    image: hzdan/myzookeeper:3.5
     restart: always
     hostname: zoo3
     volumes:
@@ -41,7 +41,7 @@ services:
       ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=0.0.0.0:2888:3888
 
   solr1:
-    image: mysolr:1.0
+    image: hzdan/mysolr7.2:1.0
     restart: always
     hostname: solr1
     volumes:
@@ -58,7 +58,7 @@ services:
       SOLR_ZOO: zoo1:2181,zoo2:2181,zoo3:2181/solr
 
   solr2:
-    image: mysolr:1.0
+    image: hzdan/mysolr7.2:1.0
     restart: always
     hostname: solr2
     volumes:
@@ -75,7 +75,7 @@ services:
       SOLR_ZOO: zoo1:2181,zoo2:2181,zoo3:2181/solr
 
   solr3:
-    image: mysolr:1.0
+    image: hzdan/mysolr7.2:1.0
     restart: always
     hostname: solr3
     volumes:
